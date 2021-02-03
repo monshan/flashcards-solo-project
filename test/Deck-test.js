@@ -18,6 +18,6 @@ describe('Deck Class', () => {
     const card47 = new Card (47, 'What is the name of the Chinese Drama Eternal Love female protagonist?', ['Fengjiu', 'Yehua', 'Baiqian'], 'Baiqian')
     const card78 = new Card (78, 'What is the Pantone Color of the Year for 2021?', ['Serenity Blue', 'Living Coral', 'Ultimate Grey'], 'Ultimate Grey' )
     const deck = new Deck([card32, card47, card78])
-    expect(deckWithThree.countCards()).to.deep.equal(3)
+    expect(deck.countCards()).to.deep.equal(3)
   })
 })
