@@ -17,12 +17,12 @@ describe('Turn Class', () => {
   })
 
   it('should store a users guess as a string', () => {
-    const turn  = new Turn ('A throw away guess')
+    const turn = new Turn ('A throw away guess')
     expect(turn.guess).to.be.a('string')
   })
   
   it('should store any users guess as a string', () => {
-    const turn  = new Turn ('Some other user guess')
+    const turn = new Turn ('Some other user guess')
     expect(turn.guess).to.equal('Some other user guess')
   })
 
