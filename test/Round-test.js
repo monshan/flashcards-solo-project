@@ -55,7 +55,7 @@ describe('Round Class', () => {
       const round = new Round (deck)
       round.takeTurn('2013')
       round.takeTurn('Living Coral')
-      expect(round.turnCount).to.deep.equal(2)
+      expect(round.turns).to.deep.equal(2)
     })
   
     it('should change the current card to the next card in the deck once a guess is made', () => {
