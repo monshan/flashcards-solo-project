@@ -2,17 +2,23 @@ const data = require('./data');
 const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 const Round = require('../src/Round')
-const Turn = require('../src/Turn')
 const Deck = require('../src/Deck')
 const Card = require('../src/Card')
 
 class Game {
   constructor() {
-    this.currentRound = 0
+    this.currentRound = null
   }
 
   start = () => {
-    // this.printMessage()
+    const convertCards = []
+    prototypeQuestions.forEach((card) => {
+      convertCards.push(new Card (card.id, card.question, card.answers, card.correctAnswer))
+    })
+    const convertDeck = new Deck (convertCards)
+    this.currentRound = new Round (convertDeck)
+    this.printMessage(convertDeck, this.currentRound)
+    this.printQuestion(this.currentRound)
   }
 
   printMessage(deck, round) {
@@ -33,5 +39,3 @@ module.exports = Game;
 // Creates Cards
 // Puts Cards in a Deck
 // Creates a new Round using the Deck
-// invokes printMessage to display the message in the CLI
-// invokes printQuestion to kick off our helper functions that allow interaction via the CLI
