@@ -2,9 +2,6 @@ const chai = require('chai');
 const expect = chai.expect;
 const Game = require('../src/Game')
 const Round = require('../src/Round')
-const Turn = require('../src/Turn')
-const Deck = require('../src/Deck')
-const Card = require('../src/Card')
 
 describe('Game Class', () => {
   it('Should be a function', () => {
