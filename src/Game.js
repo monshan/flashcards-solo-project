@@ -11,9 +11,8 @@ class Game {
   }
 
   start = () => {
-    const convertCards = []
-    prototypeQuestions.forEach((card) => {
-      convertCards.push(new Card (card.id, card.question, card.answers, card.correctAnswer))
+    const convertCards = prototypeQuestions.map((card) => {
+      return new Card (card.id, card.question, card.answers, card.correctAnswer)
     })
     const convertDeck = new Deck (convertCards)
     this.currentRound = new Round (convertDeck)
@@ -32,10 +31,3 @@ class Game {
 }
 
 module.exports = Game;
-
-// Your Game class should meet these other requirements:
-// Should keep track of the currentRound
-// start: method that starts everything
-// Creates Cards
-// Puts Cards in a Deck
-// Creates a new Round using the Deck
