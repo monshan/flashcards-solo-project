@@ -8,9 +8,11 @@ class Round {
     this.turns = 0
   }
 
-  returnCurrentCard = () => this.currentCard
+  returnCurrentCard () {
+    return this.currentCard
+  }
 
-  takeTurn = (userGuess) => {
+  takeTurn (userGuess) {
     const userTurn = new Turn (userGuess, this.currentCard)
     if (!userTurn.evaluateGuess()) {
       this.incorrectGuesses.push(userTurn.currentCard.id)
@@ -20,9 +22,15 @@ class Round {
     return userTurn.giveFeedback()
   }
 
-  calculatePercentCorrect = () => Math.round(((this.turns - this.incorrectGuesses.length) / this.turns) * 100)
+  calculatePercentCorrect () {
+    return Math.round (
+      ((this.turns - this.incorrectGuesses.length) / this.turns) * 100
+    )
+  } 
 
-  endRound = () => `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
+  endRound () {
+    return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
+  }
 }
 
 module.exports = Round;
